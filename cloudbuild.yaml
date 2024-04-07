@@ -11,7 +11,7 @@ steps:
         echo "$_SHORT_BUILD_ID"
         exit 0
 substitutions:
-  _SUB_VALUE: $(body.repository.name)
+  _SUB_VALUE: "$(body.repository.name)"
   _SUB_VALUE2: "something else"
   _SHORT_BUILD_ID: ${BUILD_ID:0:8}
   _NEW_SUBSTITUTION: "ADSFASDF"
