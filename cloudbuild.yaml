@@ -7,13 +7,15 @@ steps:
       - "-c"
       - |-
         #!/bin/sh
-        echo "hey $_SUB_VALUE"
-        echo "$_SHORT_BUILD_ID"
+        echo "hey $_REPO_NAME"
+        echo "${PROJECT_ID}"
         exit 0
+    env:
+      - "PROJECT_ID=$PROJECT_ID"
+      - "PROJECT_NUMBER=$PROJECT_NUMBER"
+
 substitutions:
-  _SUB_VALUE: "$(body.repository.name)"
   _SUB_VALUE2: "something else"
-  _SHORT_BUILD_ID: ${BUILD_ID:0:8}
-  _NEW_SUBSTITUTION: "ADSFASDF"
+  _REPO_NAME: "$(body.repository.name)"
 options:
   substitutionOption: "ALLOW_LOOSE"
