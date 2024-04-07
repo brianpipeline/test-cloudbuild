@@ -16,6 +16,6 @@ steps:
 
 substitutions:
   _SUB_VALUE2: "something else"
-  _REPO_NAME: "$(body.repository.name)"
+  _REPO_NAME: $(body.repository.name)
 options:
   substitutionOption: "ALLOW_LOOSE"
